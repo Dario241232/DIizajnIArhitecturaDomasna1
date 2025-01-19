@@ -1,5 +1,5 @@
 import pandas as pd
-import ta  # Install with `pip install ta`
+import ta  
 
 def calculate_moving_average(data, window_size=10):
     
