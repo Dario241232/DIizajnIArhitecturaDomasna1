@@ -1,0 +1,17 @@
+import pandas as pd
+import ta  # Install with `pip install ta`
+
+def calculate_moving_average(data, window_size=10):
+    
+    return data['Close'].rolling(window=window_size).mean()
+
+
+def calculate_rsi(data, window=14):
+    
+    return ta.momentum.RSIIndicator(data['Close'], window=window).rsi()
+
+
+def perform_technical_analysis(data):
+    data['MA_10'] = calculate_moving_average(data)
+    data['RSI'] = calculate_rsi(data)
+    return data
